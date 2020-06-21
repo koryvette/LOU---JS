@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+    <meta name="dcterms.created" content="Sat, 24 Mar 2018 14:07:39 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Event Form</title>
+	   <link rel="stylesheet" href="css/normalize.css">
+	   <link rel="stylesheet" href="css/submit_CSS.css">
+
+
+  </head>
+  <body>
+
+
+      <form action="index.html" method="post">
+	  <header class="main_header">
+        <h1>New Event</h1>
+		</header>
+	   <div class="primary_content">
+		<div class="info">
+        <fieldset>
+        <legend><span class="number">1. </span>Event info</legend>
+          <label for="event_name">Event Name&nbsp;&nbsp;</label>
+        <input type="text" id="name" name="event_name"><br><br>
+
+          <label for="venue">Venue/Location&nbsp;&nbsp;</label>
+        <input type="email" id="venue"  name="venue"><br><br>
+
+
+		  <label for="city">City&nbsp;&nbsp;</label>
+        <select id="city" name="city"><br>
+              <option value="lou">Louisville</option>
+              <option value="jeff">Jeffersonville</option>
+              <option value="albany">New Albany</option>
+              <option value="shep">Shepherdsville</option><br>
+		</select><br><br>
+
+
+          <label>Event Type:</label><br>
+        <input type="radio" id="auto_racing" value="auto_racing" name="type">
+          <label for="under_13" class="event">Auto Racing</label> <br>
+        <input type="radio" id="comedy" value="comedy" name="type">
+          <label for="over_13" class="event">Comedy</label><br>
+		<input type="radio" id="concert" value="concert" name="type">
+          <label for="concert" class="event">Concert</label>  <br>
+		<input type="radio" id="festival" value="festival" name="type">
+          <label for="festival" class="event">Festival</label> <br>
+		  <input type="radio" id="foodie" value="foodie" name="type">
+          <label for="over_13" class="event">Foodie</label>  <br>
+		<input type="radio" id="horse_racing" value="horse_racing" name="type">
+          <label for="over_13" class="event">Horse Racing</label>  <br>
+		<input type="radio" id="shopping" value="shopping" name="type">
+          <label for="shopping" class="event">Market/Shopping</label><br>
+
+		<input type="radio" id="sports" value="sports" name="type">
+          <label for="sports" class="event">Sports</label>  <br><br>
+
+		</div>
+
+
+ </fieldset>
+
+		<div class="date">
+        <fieldset>
+          <legend><span class="number">2. </span>When is it?</legend>
+
+          </select>
+			<br>
+          <label>Event Features:</label><br>
+          <input type="checkbox" id="details" value="family_friendly" name="user_interest"><label class="features" for="family_friendly"> Family friendly</label><br>
+          <input type="checkbox" id="details" value="free" name="user_interest"><label class="features" for="free"> Free</label><br>
+          <input type="checkbox" id="details" value="paid_admission" name="user_interest"><label class="features" for="paid_admission"> $$$</label><br>
+         <input type="checkbox" id="details" value="pets" name="user_interest"><label class="features" for="pets"> Pets OK?</label><br>
+
+
+       <label for="link">Web address for more info:</label>
+          <textarea id="link" name="link"></textarea><br><br>
+
+		  <label for="bio">Additional comments/description:</label>
+          <textarea id="bio" name="comments"></textarea>
+
+        </div>
+          </fieldset><br>
+        </div> <!-- end .primary_content -->
+      </form>
+
+
+  <footer class="footer">
+          <br><br>
+		  <button type="submit" class="submit">Submit Event</button>
+  </footer>
+
+  </body>
+</html>
