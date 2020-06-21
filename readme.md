@@ -1,9 +1,7 @@
 # What's Up Louisville? (Code Louisville project)
 
 ## Description  
-In searching for events going on around Louisville, I have often found myself searching for a centralized site containing activities happening around town.  This site aims to provide a comprehensive list of events in order to ease the search.  
-
-
+This website was created as the front-end project in Code Louisville.  Since that first course, i have continued to develope and improve the information on this site.  The goal of this project is to utilize Javascript to load events from an API or a CSV file.  
   
 ## Files Used
 Here are the pages included in this site:  
