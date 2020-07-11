@@ -7,48 +7,22 @@
     <title>What's Up Louisville?</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-<link rel="stylesheet" href="css/flex_bootstrap.css">
-<link rel="stylesheet" href="css/slick.css">
+<link rel="stylesheet" href="/../css/flex_bootstrap.css">
+<link rel="stylesheet" href="/../css/slick.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../script/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <!-- <script type="text/javascript" src="script/LOU_JS.js"></script> -->
+<script type="text/javascript" src="../script/ApiLoad.js"></script>
+
 <script src="https://kit.fontawesome.com/1113827b2b.js"></script> 
 
 </head>
 <body class="bg-danger text-white">
-  <img></img>
-<script>
-getData();
 
-async function getData(){
-    const response = await fetch('EventfulXml1test.csv');
-    const data = await response.text();
-
-    const EventData = data.split('\n').slice(1);
-    EventData.forEach(row => {
-        const columns = row.split(',');
-        const Venue = columns[0];
-        const EventName = columns[1];
-        const Description = columns[2];
-        const StartDate = columns[3];
-        const StartTime = columns[4];
-        const EndDate = columns[5];
-        const Link = columns[6];
-        const City = columns[7];
-        const Image = columns[8];
-        const Background = columns[10];
-
-        console.log('It worked!!');
-        fetch('rain.jpg');
-     });
-}
-
-</script>
-
-<!--  navigation bar  -------------->
+<!--  navigation bar  -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
   <a class="navbar-brand text-danger" href="#">What's UP?</a>
@@ -227,11 +201,11 @@ async function getData(){
 
 
 
-        </div>
+
+          
 
 
-    
-    
+        </div>    
     
         <div id="tableLayout">   
             <table id="event_table" class = "table-warning text-danger table-striped">
@@ -494,8 +468,8 @@ async function getData(){
   </div>
 </div>
 
-<script type="text/javascript" src="script/LOU_JS.js"></script>
-<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../script/LOU_JS.js"></script>
+<script type="text/javascript" src="../script/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 
 //  View more details in Tile view //
@@ -545,8 +519,8 @@ function hideTable() {
   } 
 </script>
 
-<script type="text/javascript" src="script/jquery-min.js"></script>
-<script type="text/javascript" src="script/slick.min.js"></script>
+<script type="text/javascript" src="../script/jquery-min.js"></script>
+<script type="text/javascript" src="../script/slick.min.js"></script>
 <script type="text/javascript">
 $('.slick-slider').slick({
   infinite: true,

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>What's Up Louisville?</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/flex_bootstrap.css">
+<link rel="stylesheet" href="css/slick.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="script/LOU_JS.js"></script> -->
+<script type="text/javascript" src="script/ApiLoad.js"></script>
+
+<script src="https://kit.fontawesome.com/1113827b2b.js"></script> 
+
+</head>
+<body class="bg-danger text-white">
+
+<!--  navigation bar  -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+  <a class="navbar-brand text-danger" href="#">What's UP?</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="menu_options collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index_tiles.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="LOU_education_html.html">Education</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="LOU_festival_html.html">Festivals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="LOU_music_html.html">Live Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="LOU_markets_html.html">Markets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="LOU_Sports_html.html">Sports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="LOU_tech_html.html">Technology</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Reset</button>
+    </form>
+    </div>
+  </div>
+<button  class="btn btn-outline-info ml-auto" data-toggle="modal" data-target="#interest" data-show="true">View your events</button>
+
+</nav>
+<!--  navigation bar end  ------------>
+
+<!--start of MY Events list form -->
+<div class="modal " id="interest" role="dialog">
+<div class="modal-dialog">
+
+ <!-- Modal content-->
+ <div class="modal-content">
+   <div class="modal-header">
+     <button type="button" class="close" data-dismiss="modal">&times;</button>
+     <h4 class="modal-title">My Events</h4>
+   </div>
+   <div class="modal-body">
+
+<!--start of MY Events list form -->
+<table id="eventlist" class = "list table-warning text-danger table-responsive">
+  <thead>
+<TR>
+  <th class = "event_heading heading bg-dark" >Event Name</th>
+  <th class = "venue_heading heading bg-dark">Venue</th>
+  <th class = "start_heading heading bg-dark">Start Date</th>
+  <th class = "time_heading heading bg-dark">Start Time</th>
+  <th class = "city_heading heading bg-dark">City</th>
+  <th class = "desc_heading heading bg-dark">Description</th>
+  <th class = "type_heading heading bg-dark">Event Type</th>
+  </tr>
+</thead>
+ <tbody id='myNewTableBody'></tbody>
+</table>
+
+   </div>
+   <div class="modal-footer">
+     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     <button type="button" class="btn btn-default" data-dismiss="modal">Add to Calendar</button>
+   </div>
+ </div>
+
+</div>
+</div>
+<!--end of MY Events list form -->
+
+<!--  jumbotron  --------------------->
+<div id="banner" class="jumbotron jumbotron-fluid">
+  <div class="container text-sm-center pt-3">
+
+   <h1 class="display-4 title text-danger">What's up LOUISVILLE?</h1>
+    <p class="lead text-danger">Your comprehensive guide for what's going on in Louisville.</p>
+
+    <br>
+    <br>
+    <br>
+  </div>
+ </div>
+</div>
+<!--  end jumbotron  -------------->
+<!--  Social media buttons  -------------->
+<div class="container-fluid row text-center">
+    <div class='col'>
+    <div class="btn-group buttons social"><a href="mailto:korydhowell@yahoo.com" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fb fa-envelope-o fa-1x"></button></a></div>
+    </div>
+
+    <div class='col'>
+    <div class="btn-group buttons social"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.facebook.com_kory.howell.92&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=bR9azM3br8WDFkS-5ZIjT0nfqkO7q8PKRSCEj9oz0Fg&e=" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-facebook fa-1x"id="target1"></button></a></div>
+    </div>
+    <div class='col'>
+    <div class="btn-group buttons social"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.instagram.com_79koryvette_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=yA07LZnSSlHp6fmyRbBL6656LC7yWKWTc1yXpYUrHNU&e=" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-instagram fa-1x"></button></a></div>
+    </div>
+    <div class='col'>
+    <div class="btn-group buttons social"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.linkedin.com_in_kory-2Dhowell-2D946315b8&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=HSbm3EElnliXeK44q3eBB1v4_FHPT5BezIFp2lP9iG0&e=" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-linkedin fa-1x"></button></a></div>
+    </div>
+    <div class='col'>
+    <div class="btn-group buttons social"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__twitter.com_koryvette&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=ebtdMx5O0em7JotQsXaz5x24mkf8zoo51pj6S5k0VYs&e=" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-twitter fa-1x"></button></a></div>
+    </div>
+</div>
+<!--  end social media  -------------->
+
+
+<div>
+<p class="intro text-sm-center pt-1">What's up Louisville?  We've scoured the internet and compiled a list of what's up in Louisville.  Don't sit home wondering what events are happening around you. </p>
+</div>
+
+<div class="post-slider container-fluid row">
+    <i class="prev fas fa-chevron-left"></i>
+
+
+    <div class="container-fluid slick-slider align-items-center">
+        <div><p class="item locations fourth"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.4thstlive.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=FSdZTmVkzS3UjE4YonV0XBHZ8K7V2KlsT5Hpik2NVjY&e=" target="_blank">4th Street Live</a></p></div>
+        <div><p class="item locations churchill"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.churchilldowns.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=8NQc5gfJh8n6OIpK96VKW4vkRGNUJluLZDwoMGwuDOE&e=" target="_blank">Churchill Downs</a></p></div>
+        <div><p class="item locations comedy"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.laughingderby.com_home&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=auVXCuqWZRSDAPEFPCUE3o8KJ28gfIaqwUpwHtuLvlk&e=" target="_blank">Comedy Caravan</a></p></div>
+        <div><p class="item locations headliners"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__headlinerslouisville.com_events_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=V3_QI4JcGesBHE1ygv5cbKQipsPbG3HAjjSHXrVshDc&e=" target="_blank">Headliners Music Hall</a></p></div>
+        <div><p class="item locations amphi"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.iroquoisamphitheater.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=f2tQLaZhEBvwbQ02Lm-8dKFGrS7gF7QCyHoJCba3SwE&e=" target="_blank">Iroquois Amphitheater</a></p></div>
+        <div><p class="item locations yum"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.kfcyumcenter.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=E3dqhXPTqqlSrXC3T2OJn80hyDa7gmSZN1AYt1soFgQ&e=" target="_blank">KFC Yum Center</a></p></div>
+        <div><p class="item locations kfec"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__kyexpo.org_kec_eventCalendar.aspx&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=I487gSxWP8TXuVnD7c0pUJUdH1y5gsKzRU2FDnpWrKE&e=" target="_blank">Ky Fair and Expo Center</a></p></div>
+        <div><p class="item locations jbspeed"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.speedmuseum.org_events-2Dprograms_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=JjyXKT-ncocKhd20_gnFzKZL3qnv5WzHSAFjGnQIl1Y&e=" target="_blank">Speed Art museum</a></p></div> 
+        <div><p class="item locations kyca"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.kentuckycenter.org_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=3QX2NxF4fBaCEbBYzcpONN9ey6BDVcmX3wtTlNtSuQ8&e=" target="_blank">Ky Center for the Arts</a></p></div>
+        <div><p class="item locations paristown"><a href="https://www.paristown.com/happenings" target="_blank">Paristown Hall</a></p></div> 
+        <div><p class="item locations mercury"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.mercuryballroom.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=0DUpzxVujHVrhns1dv4GNDCJn3t2qxCEaWJxuApXHvo&e=" target="_blank">Mercury Ballroom</a></p></div>
+        <div><p class="item locations dragway"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.ohiovalleydragway.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=wImO58Vd16SxI7OgoqiikH0-Oy1MG_-Ho8MBuZCdOjk&e=" target="_blank">Ohio Valley Raceway</a></p></div>
+        <div><p class="item locations nulu"><a href="https://nulubusinessassocation.wildapricot.org/" target="_blank">NuLu</a></p></div>
+        <div><p class="item locations palace"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.louisvillepalace.com_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=CkG-MjtCG7YCQnSz09HfSzsw9FAJyWxPJz1oBVdLE1M&e=" target="_blank">Palace Theatre</a></p></div>
+        <div><p class="item locations slugger"><a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.milb.com_louisville&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=s23-WU6rZLTZ_YcYMzNN8fEIdVDphNPkwbrkFk7i_u0&e=" target="_blank">Slugger Field</a></p></div>
+        <div><p class="item locations gocards text-danger"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__gocards.com_index.aspx&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=czT3kpvkTSDJ0vwxNnZE2namqPu4m68AknW6q_BQqME&e=" target="_blank">University of Louisville</a></p></div>
+        <div><p class="locations logan"><a href="https://loganstmarket.com/" target="_blank">Logan St. Market</a></p></div>
+        <div><p class="item locations library"><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__lfpl.org_&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=rKp-4dKleK1mNbNLQmt0OvlaS5Zrn3ro0veBuoyDd5Y&e=" target="_blank">Public Library</a></p></div>
+    </div> <!--end of categories div ---->
+    <i class="next fas fa-chevron-right"></i>
+
+</div>
+
+
+<div class="container-fluid">
+<div class="row align-items-center">
+ <div class="col-md-12 col-lg-12 mr-auto">
+     <div class="sticky bg-danger fixed-top ">
+        <h1 class="event-type"><strong>Upcoming events for DECEMBER / JANUARY</strong></h1>
+        <caption>Here's a current list of events happening around the 'Ville:</caption>
+        <button class="fas fa-list-ul layout" onclick="hidePanels()"></button>
+        <button class="fas fa-table layout" onclick="hideTable()"></button>
+        <br>
+        <br>
+        <!-- pagination start  -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            <li class="page-item" id="prev-page">
+                <a class="page-link" href="javascript:void(0)" tabindex="-1" aria-hidden="true">Previous</a>
+            </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- pagination end-->
+    <div class="main_content">  <!--beginning of main webpage content -->
+
+
+        <!---  event 1 -->
+        <div id="tileLayout">
+
+
+
+
+          
+
+
+        </div>    
+    
+        <div id="tableLayout">   
+            <table id="event_table" class = "table-warning text-danger table-striped">
+                    <thead>
+                        <TR id="names">
+                        <th class = "event_heading heading bg-dark" >Event Name</th>
+                        <th class = "venue_heading heading bg-dark">Venue</th>
+                        <th class = "start_heading heading bg-dark">Start Date</th>
+                        <th class = "time_heading heading bg-dark">Start Time</th>
+                        <th class = "city_heading heading bg-dark">City</th>
+                        <th class = "desc_heading heading bg-dark">Description</th>
+                        <th class = "type_heading heading bg-dark">Event Type</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table_of_events">
+
+                    
+
+                    </tbody>
+
+                </table>
+        </div>
+         <br>
+        <br>
+
+      </div> <!-- end main-content div -->
+    </div> <!-- end primary_list div -->
+
+
+
+  </div>
+</div> <!--  container end  ---------->
+
+    </div>
+</div>
+
+
+<!--    FOOOTER ---------------------->
+
+<footer class="main_footer bg-dark">
+ <span class="footer">Don't see your event?  Click   <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#newevent">HERE</button>
+
+ </footer>
+
+<!--    FORM MODAL ------------------->
+<div class="modal fade" id="newevent" tabindex="-1" role="dialog" aria-labelledby="newevent" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title" id="createEvent">New Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><!-- New Event form  ------->
+
+<form>
+  <div class="form-group"><!-- Event name  ------->
+    <label class="form_heading" for="formGroupExampleInput">Event Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Event Name">
+  </div>
+  <div class="form-group"><!-- Where event is located  -->
+    <label class="form_heading" for="formGroupExampleInput2">Venue</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Event Venue">
+  </div>
+
+<div class="form-row"><!-- When is event ------->
+ <label class="col-lg-12 form_heading">Event Date</label>
+
+ <div class="form-group col-md">
+   <select class="custom-select form-control" id="month">
+  <option value="1">1 - January</option>
+  <option value="2">2 - February</option>
+  <option value="3">3 - March</option>
+  <option value="4">4 - April</option>
+  <option value="5">5 - May</option>
+  <option value="6">6 - June</option>
+  <option value="7">7 - July</option>
+  <option value="8">8 - August</option>
+  <option value="9">9 - September</option>
+  <option value="10">10 - October</option>
+  <option value="11">11 - November</option>
+  <option value="12">12 - December</option>
+</select>
+  </div>
+
+<div class="form-group col-md">
+<select class="custom-select form-control" id="day">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+  </select>
+</div>
+
+<div class="form-group col-sm">
+  <select class="custom-select form-control" id="year">
+  <option value="2016">2018</option>
+  <option value="2017">2019</option>
+  <option value="2018">2020</option>
+  <option value="2019">2021</option>
+  <option value="2020">2022</option>
+</select>
+ </div>
+
+ <div class="form-group col-sm">
+   <select class="custom-select form-control" id="start-time">
+     <option value="700">7:00 A.M</option>
+     <option value="730">7:30 A.M</option>
+     <option value="800">8:00 A.M</option>
+     <option value="830">8:30 A.M</option>
+     <option value="900">9:00 A.M</option>
+     <option value="900">9:30 A.M</option>
+     <option value="1000">10:00 A.M</option>
+     <option value="1030">10:30 A.M</option>
+     <option value="1100">11:00 A.M</option>
+     <option value="1130">11:30 A.M</option>
+     <option value="1200">12:00 P.M</option>
+     <option value="1230">12:30 P.M</option>
+     <option value="1300">1:00 P.M</option>
+     <option value="1330">1:30 P.M</option>
+     <option value="1400">2:00 P.M</option>
+     <option value="1430">2:30 P.M</option>
+     <option value="1500">3:00 P.M</option>
+     <option value="1530">3:30 P.M</option>
+     <option value="1600">4:00 P.M</option>
+     <option value="1630">4:30 P.M</option>
+     <option value="1700">5:00 P.M</option>
+     <option value="1730">5:30 P.M</option>
+     <option value="1800">6:00 P.M</option>
+     <option value="1830">6:30 P.M</option>
+     <option value="1900">7:00 P.M</option>
+     <option value="1930">7:30 P.M</option>
+     <option value="2000">8:00 P.M</option>
+     <option value="2030">8:30 P.M</option>
+     <option value="2100">9:00 P.M</option>
+     <option value="2130">9:30 P.M</option>
+     <option value="2200">10:00 P.M</option>
+     <option value="2230">10:30 P.M</option>
+     <option value="2300">11:00 P.M</option>
+     <option value="2330">11:30 P.M</option>
+ </select>
+  </div>
+</div>
+
+
+<div class="form-group">
+<label class="form_heading">Event Type</label><!-- Event type  ------->
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">Auto Racing</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">Comedy</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+  <label class="form-check-label" for="exampleRadios2">Concert</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+  <label class="form-check-label" for="exampleRadios2">Festival</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
+  <label class="form-check-label" for="exampleRadios2">Foodie</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios6" value="option6">
+  <label class="form-check-label" for="exampleRadios2">Horse Racing</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios7" value="option7">
+  <label class="form-check-label" for="exampleRadios2">Market/Shopping</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios8" value="option8">
+  <label class="form-check-label" for="exampleRadios2">Sports</label>
+ </div>
+</div>
+
+
+<div class="form-group">
+<label class="form_heading">Event options</label><!-- Event options  ------->
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">Kid friendly?</label>
+</div>
+
+ <div class="form-check">
+   <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+   <label class="form-check-label" for="defaultCheck2">Free</label>
+  </div>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+  <label class="form-check-label" for="defaultCheck3">$$$$</label>
+ </div>
+
+ <div class="form-check">
+   <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+   <label class="form-check-label" for="defaultCheck4">Pets OK?</label>
+  </div>
+</div>
+
+
+<div class="form-group"><!-- Event description  -->
+  <label class="form_heading" for="formGroupExampleInput3">Comments</label>
+  <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Description of event">
+</div>
+
+<div class="form-group"><!-- Web address for more info  -->
+  <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Web address for more info">
+</div>
+
+</form>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="script/LOU_JS.js"></script>
+<script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+//  View more details in Tile view //
+  $(document).ready(function(){
+    $('.quickview-title').click(function(){
+      var $eventview = $(this).parent().parent().next();
+      $($eventview).fadeIn('1000');
+    });
+    $('.close-btn').click(function(){
+      var $closebtn = $(this).parent();
+      $($closebtn).fadeOut('800');
+    });
+  });
+
+  function hidePanels() {
+  var x = document.getElementById("tableLayout");
+   if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display =  "block";
+  }
+  var y = document.getElementById("tileLayout");
+   if (y.style.display === "block") {
+    y.style.display = "none";
+    }
+    else {
+    y.style.display =  "none";
+    }
+} 
+
+// Switch from TILE view to TABLE view //
+function hideTable() {
+  var x = document.getElementById("tileLayout");
+   if (x.style.display === "none") {
+    x.style.display = "block";
+    }
+    else {
+    x.style.display =  "block";
+    }
+   
+   var y = document.getElementById("tableLayout");
+   if (y.style.display === "block") {
+    y.style.display = "none";
+  } else {
+    y.style.display =  "none";
+  }
+  } 
+</script>
+
+<script type="text/javascript" src="script/jquery-min.js"></script>
+<script type="text/javascript" src="script/slick.min.js"></script>
+<script type="text/javascript">
+$('.slick-slider').slick({
+  infinite: true,
+  slidesToShow: 5,
+  slidesToScroll: 2,
+  nextArrow:$('.next'),
+  prevArrow:$('.prev')
+});
+
+// remove fixed-top class header on small screens //
+$(window).bind("resize",function(){
+    console.log($(this).width())
+    if($(this).width() < 992){
+    $('.sticky').removeClass('fixed-top');
+    }
+    else{
+    $('.sticky').addClass('fixed-top');
+    }
+});
+
+
+</script>
+
+</body>
+</html>
