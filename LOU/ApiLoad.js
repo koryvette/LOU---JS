@@ -1,6 +1,5 @@
 const express = require ("express");
-let router = express.Router();
-
+const request = require('request');
 
 //Get current month to load into API url
 var today = new Date();
@@ -27,18 +26,18 @@ var key = `${userInput}`;
 const API = `http://api.eventful.com/rest/events/search?app_key=${key}&location=Louisville&date=${currentMonth}&page_size=250&page_number=1&within=25&units=miles`;
 
 //Make request to API to request data
-request({
-    url: `${API}`,
-    xml: true,
-}, (err, response, body)=>{
-    console.log(XML.stringify(body, undefined, 4));
-});
+const LouEventDataRequest = (callback) =>{
+    request(API, {xml: true}, (err, res, body) => {
+        if (err){
+            return callback(err);
+        }
+        return callback(body);    
+    });
+}
 
 
 //Parse data to use in HTML
 let eventTiles = document.getElementById('tileLayout');
-
-
 const Tile = document.querySelector('#tileLayout');
 
 function fetchEventData(){
@@ -86,4 +85,4 @@ function generateHtml(){
     Tile.innerHTML = html;
 }
 
-module.exports = router;
+module.exports.callApi = LouEventDataRequest;

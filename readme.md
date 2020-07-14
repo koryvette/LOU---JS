@@ -23,22 +23,22 @@ CSS
   
   
 Javascript/JQuery  
-* script/LOU_JS.js  
-* script/jquery-3.3.1.min.js
+* index.js  
+* ApiLoad.js
 
 
 
 ## Funtionality  
 The following functionality has been added to this site:
   
-* Bootstrap was used in the page layout.
-* Flexbox was also used.
+* A function was created to capture the current month, based on today's date.  This data is used as part of the actual API.  
+* Once the date/month is captured, the API is used to obtain events for the current month.  
 * JQuery was used to create the background fade in/fade out  
 * JQuery was also used to filter the event list  
 * Form at bottom of page allows user to add an event (although not posted to database)  
 * This site is also available through github/pages using the link below:  
   https://koryvette.github.io/eventcalendar
-* Testing was done on the github/pages link to ensure various screen sizes and browsers were functional.
+* Testing was done on the github/pages link to ensure various screen sizes and browsers were functional.  
 
 
   

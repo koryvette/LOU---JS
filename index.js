@@ -1,24 +1,25 @@
 const express = require('express');
 const app = express();
+const request = require('request');
+const LouEventDataRequest = require("./LOU")
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: true}));
+const http = require('http');
 
-app.listen(3000, () => console.log ('listening at 3000'));
+http.createServer((req, res) => {
+    if (req.API === "/request"){
+        LouEventDataRequest.callApi(function(response){
+            res.write(JSON.stringify(response));
+            res.end();
+        });
+    }
+    console.log ('listening at 3000')
+}).listen(3000);
+
+
+
 app.use(express.static('LOU'));
 
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-    );
-    if (req.method === 'OPTION'){
-        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-        return res.status(200).data({});
-    }
-    next();
-});
+// var key = "NNQLDMQTJrwpbHSx"
 
 //cd source\repos\LOU_JS node index.js
