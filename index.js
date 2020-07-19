@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 const request = require("request");
+const xml2js = require('xml2js');
+const util = require("util");
 
 const http = require('http');
-
+const { response } = require('express');
 
 //Get current month to load into API url
 var today = new Date();
@@ -24,21 +26,35 @@ const currentMonth = month[today.getMonth()];
 
 //User input to capture API Key
 var key = "NNQLDMQTJrwpbHSx";
+//http://api.eventful.com/json/events/search?app_key=NNQLDMQTJrwpbHSx&location=Louisville&date=July&page_size=250&page_number=1&within=25&units=miles
 
 //Use API Key and Current month variables to create API
 const API = `http://api.eventful.com/rest/events/search?app_key=${key}&location=Louisville&date=${currentMonth}&page_size=250&page_number=1&within=25&units=miles`;
 
 app.use(express.static('LOU'));
 
-request(`${API}`, function(error, response, body){
-    if(error){
-        console.log("There was an error");
-    }else{
-        console.log(body);
-    }
+app.get('/api', function(req, res) {
+
+    request(`${API}`, function(error, response, body){
+        if(error)
+            {
+            console.log("There was an error");
+            }
+        else{
+
+            var parser = new xml2js.Parser();
+            parser.parseString(body, function (err, result) {
+                extractedData = result['search']['events'];
+                res.json(extractedData); 
+                console.log(extractedData); 
+
+                });
+            }
+    });
 });
 
+
 app.listen(3100, function(){
-    console.log ("listening at 3000");
+    console.log ("listening at 3100");
 });
 //cd source\repos\LOU_JS node index.js
