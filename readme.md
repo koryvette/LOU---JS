@@ -47,9 +47,9 @@ The following functionality has been added to this site:
   
 ## Known Issues  
 Here are a few known issues with the site:  
-* .  
+* Javascript for "Quick View" is broken.  
 * "New Event" form does not post information.  This is a mock-up form to be used later when tied to a database.
-*   
+* Images for tiles in TileLayout do not appear.  
 * Columns do not fully extend across table, leaving empty space on some pages.  
 * 
 
