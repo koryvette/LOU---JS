@@ -1,15 +1,14 @@
 //Make request to API to request data
+
+
+var startDate = (function(){this.setDate(this.getDate()-1); return this})
+                .call(new Date)
+console.log(startDate)
+
 fetch('/api')
     .then(response => response.json())
     .then(data => generateHtml(data[0]['event']))
-
-// getApiData();
-// async function getApiData(){
-//     const response = await fetch('/api');
-//     const data = await response.json();
-//     console.log(data);
-// }
-
+    
 
 //---------------    helper functions    ----------------
 //-----------    find DIV to insert HTML   --------------
@@ -18,16 +17,21 @@ const eventTables = document.getElementById('table_of_events');
 
 //-------   generate HTML code from API response   ------
 function generateHtml(data){
-    const htmlTile = data.map(item => `         
+    var result = data.filter(function(){return data.start_time >= startDate;
+    });
+
+    const htmlTile = data.map(item => ` 
+    
      <div class="event-thumb"> 
                        <div class="event-thumb-image">
-                           <img src="${item.image.thumb}"> 
+                           <img src="${item.image}"> 
                            <div class="quickview-title">Quick View</div> 
                        </div>
                        <div class="event-thumb-title"> 
-                           <h3> ${item.start_time}</h3> 
-                           <h5> ${item.title} </h5> 
-                           <h5> ${item.venue} </h5>
+                           <h3> `+ moment(`${item.start_time}`).format('l') +`</h3> 
+                           <h5>` + moment(`${item.start_time}`).startOf('day').fromNow() + `</h5>
+                           <h5> <a href="${item.venue_url}" target="_blank">${item.title}</a></h5> 
+                           <h5> ${item.venue_name} </h5>
                        </div>
                    </div>
                    <div class="event-view"> 
@@ -38,12 +42,12 @@ function generateHtml(data){
                        <div class="event-big-desc">
                            <h5  class= "event-title">  ${item.title}</h5> 
                          <h5  class= "text-dark"> ${item.venue_name}</h5> 
-                           <p  class= "text-dark"><b>Date:  ${item.Start_Date} </b></p>
+                           <p  class= "text-dark"><b>Date:`+ moment(`${item.start_time}`).format('l') +` </b></p>
                            <p  class= "text-dark"><b>Start Time: </b> ${item.start_time} </p>
                            <p  class= "text-dark"><b>End Time: </b>  ${item.stop_time} </p> 
                            <p  class= "text-dark"><b>Description: </b>  ${item.description} </p> 
                            <p>   </p>
-                           <a href="${item.url}"  target="_blank">For more info, click here.</a>
+                           <a href="${item.venue_url}"  target="_blank">For more info, click here.</a>
                        </div> 
                        </div>                       
     `
