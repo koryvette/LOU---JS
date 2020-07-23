@@ -176,16 +176,21 @@
     <i class="next fas fa-chevron-right"></i>
 
 </div>
-
+<div class="sticky bg-danger fixed-top ">
+  <h1 class="event-type"><strong>Upcoming events</strong></h1>
+  <caption>Here's a current list of events happening around the 'Ville:</caption>
+  <button class="fas fa-list-ul layout" onclick="hidePanels()"></button>
+  <button class="fas fa-table layout" onclick="hideTable()"></button>
+</div>
 
 <div class="container-fluid">
 <div class="row align-items-center">
- <div class="col-md-12 col-lg-12 mr-auto">
-     <div class="sticky bg-danger fixed-top ">
+ <div class="col-md-12 col-lg-12 ">
+     <!---<div class="sticky bg-danger fixed-top ">
         <h1 class="event-type"><strong>Upcoming events</strong></h1>
         <caption>Here's a current list of events happening around the 'Ville:</caption>
         <button class="fas fa-list-ul layout" onclick="hidePanels()"></button>
-        <button class="fas fa-table layout" onclick="hideTable()"></button>
+        <button class="fas fa-table layout" onclick="hideTable()"></button>  -->
         <br>
         <br>
         <!-- pagination start  -->
@@ -479,7 +484,7 @@
 <script type="text/javascript">
 
 //  View more details in Tile view //
-  $(document).ready(function(){
+  window.addEventListener('load',function(){
     $('.quickview-title').click(function(){
       var $eventview = $(this).parent().parent().next();
       $($eventview).fadeIn('1000');

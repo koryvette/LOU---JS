@@ -17,14 +17,18 @@ const eventTables = document.getElementById('table_of_events');
 
 //-------   generate HTML code from API response   ------
 function generateHtml(data){
-    var result = data.filter(function(){return data.start_time >= startDate;
-    });
+    //var result = data.filter(function(){return data.start_time >= startDate;
+    //});
 
-    const htmlTile = data.map(item => ` 
+    const htmlTile = data.map(item => {
+        if(moment(`${item.start_time}`).format('l') >= moment(`${startDate}`).format('l'))
+        console.log(moment(`${item.start_time}`).format('l'))
+        console.log(moment(`${startDate}`).format('l'))
+        return    ` 
     
      <div class="event-thumb"> 
                        <div class="event-thumb-image">
-                           <img src="${item.image}"> 
+                           <img src="img/bourbon.jpg"> 
                            <div class="quickview-title">Quick View</div> 
                        </div>
                        <div class="event-thumb-title"> 
@@ -50,8 +54,8 @@ function generateHtml(data){
                            <a href="${item.venue_url}"  target="_blank">For more info, click here.</a>
                        </div> 
                        </div>                       
-    `
-    ).join(' ');
+    `;
+    }).join(' ');
 
     const htmlTable = data.map(item => `
     <TR>

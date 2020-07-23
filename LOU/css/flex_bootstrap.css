@@ -75,6 +75,7 @@ h4 {
 }
 
 #tileLayout{
+  margin-left: 50px;
 
 }
 
@@ -83,7 +84,7 @@ h4 {
 color: red;
 }
 .locations{
-  width: 225px;
+  width: 210px;
   align-content: center;
 
   text-shadow: #fff 0px 0px 1px,   #fff 0px 0px 1px,   #fff 0px 0px 1px,
@@ -343,7 +344,7 @@ section:target p{
   height: 280px;
   display: inline-block;
   margin: 8px;
-  float: left;
+  float: left; 
 }
 
 .event-thumb-image{
@@ -551,7 +552,7 @@ section:target p{
   .sticky{
     position: sticky;
     -webkit-position: sticky;
-    top: 65px;
+    top: 55px;
   }
 
 .categories{
