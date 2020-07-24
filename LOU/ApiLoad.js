@@ -46,14 +46,14 @@ function generateHtml(data){
                        <div class="event-big-desc">
                            <h5  class= "event-title">  ${item.title}</h5> 
                          <h5  class= "text-dark"> ${item.venue_name}</h5> 
-                           <p  class= "text-dark"><b>Date:`+ moment(`${item.start_time}`).format('l') +` </b></p>
+                           <p  class= "text-dark"><b>Date:`+ moment(`${item.start_time}`).format('l') +`</p>
                            <p  class= "text-dark"><b>Start Time: </b> ${item.start_time} </p>
                            <p  class= "text-dark"><b>End Time: </b>  ${item.stop_time} </p> 
                            <p  class= "text-dark"><b>Description: </b>  ${item.description} </p> 
                            <p>   </p>
                            <a href="${item.venue_url}"  target="_blank">For more info, click here.</a>
                        </div> 
-                       </div>                       
+                    </div>                                           
     `;
     }).join(' ');
 
@@ -71,6 +71,8 @@ function generateHtml(data){
     ).join('');
 
     eventTiles.innerHTML = htmlTile;
+    //console.log(htmlTile);
+
     eventTables.innerHTML = htmlTable;
     //console.log(html)
 }

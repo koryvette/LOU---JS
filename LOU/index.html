@@ -129,7 +129,7 @@
     </div>
 
     <div class='col'>
-    <div class="btn-group buttons social"><a href="https://www.facebook.com_kory.howell.92&d=DwMGAg&c=3IlhnxorPWbyVbfJC_b1tA&r=nZToghGhauBfrY5tqsx7KA&m=az0pjHUswFGEoXw4QhUwudsZqvWNMB0uYYsx0jIh9HU&s=bR9azM3br8WDFkS-5ZIjT0nfqkO7q8PKRSCEj9oz0Fg&e=" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-facebook fa-1x"id="target1"></button></a></div>
+    <div class="btn-group buttons social"><a href="https://www.facebook.com/kory.howell.92" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-facebook fa-1x"id="target1"></button></a></div>
     </div>
     <div class='col'>
     <div class="btn-group buttons social"><a href="https://www.instagram.com/79koryvette/" target="_blank"><button type="button" class="btn btn-danger btn-lg fa fa-instagram fa-1x"></button></a></div>
@@ -181,9 +181,18 @@
   <caption>Here's a current list of events happening around the 'Ville:</caption>
   <button class="fas fa-list-ul layout" onclick="hidePanels()"></button>
   <button class="fas fa-table layout" onclick="hideTable()"></button>
+
+  <!-- pagination start  -->
+  <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+      <li class="page-item" id="prev-page">
+          <a class="page-link" href="javascript:void(0)" tabindex="-1" aria-hidden="true">Previous</a>
+      </li>
+      </ul>
+  </nav>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid align-items-center">
 <div class="row align-items-center">
  <div class="col-md-12 col-lg-12 ">
      <!---<div class="sticky bg-danger fixed-top ">
@@ -191,16 +200,7 @@
         <caption>Here's a current list of events happening around the 'Ville:</caption>
         <button class="fas fa-list-ul layout" onclick="hidePanels()"></button>
         <button class="fas fa-table layout" onclick="hideTable()"></button>  -->
-        <br>
-        <br>
-        <!-- pagination start  -->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-            <li class="page-item" id="prev-page">
-                <a class="page-link" href="javascript:void(0)" tabindex="-1" aria-hidden="true">Previous</a>
-            </li>
-            </ul>
-        </nav>
+
     </div>
     <!-- pagination end-->
     <div class="main_content">  <!--beginning of main webpage content -->
@@ -208,6 +208,33 @@
 
         <!---  event 1 -->
         <div id="tileLayout">
+          <div class="event-thumb">
+            <div class="event-thumb-image">
+                <img src="img/bourbon.jpg"> 
+                <div class="quickview-title">Quick View</div>
+            </div>
+            <div class="event-thumb-title">
+                <h3>2019-12-02</h3>
+                <h5>Teen Game Time</h5>
+                <h5>Louisville Free Public Library, Western Branch</h5>
+            </div>
+        </div>
+        <div class="event-view">
+            <div class="close-btn">X</div>
+            <div class="event-big-image"> 
+                <img src="">
+            </div>
+            <div class="event-big-desc">
+                <h5  class= "event-title">Teen Game Time</h5>
+              <h5  class= "text-dark">Louisville Free Public Library, Western Branch</h5>
+                <p  class= "text-dark"><b>Date: 2019-12-02</p>
+                <p  class= "text-dark"><b>Start Time: </b> 16:00:00</p>
+                <p  class= "text-dark"><b>End Time: </b>None</p>
+                <p  class= "text-dark"><b>Description: </b> <p>Come hang out with other teens and tweens and play board games, card games and have some Wii fun! Ages 11+</p></p>
+                <p>   </p>
+                <a href="http://louisville.eventful.com/events/teen-game-time-/E0-001-116249446-0@2019120216?utm_source=apis&utm_medium=apim&utm_campaign=apic" target="_blank">For more info, click here.</a> 
+            </div> 
+        </div>
 
 
 
@@ -479,12 +506,31 @@
   </div>
 </div>
 
-<script type="text/javascript" src="script/LOU_JS.js"></script>
 <script type="text/javascript" src="script/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="script/slick.min.js"></script>
+
 <script type="text/javascript">
+$('.slick-slider').slick({
+  infinite: true,
+  slidesToShow: 5,
+  slidesToScroll: 2,
+  nextArrow:$('.next'),
+  prevArrow:$('.prev')
+});
+
+// remove fixed-top class header on small screens //
+$(window).bind("resize",function(){
+    console.log($(this).width())
+    if($(this).width() < 992){
+    $('.sticky').removeClass('fixed-top');
+    }
+    else{
+    $('.sticky').addClass('fixed-top');
+    }
+});
 
 //  View more details in Tile view //
-  window.addEventListener('load',function(){
+$(window).on("click", function(){
     $('.quickview-title').click(function(){
       var $eventview = $(this).parent().parent().next();
       $($eventview).fadeIn('1000');
@@ -529,31 +575,7 @@ function hideTable() {
   }
   } 
 </script>
-
-<script type="text/javascript" src="script/jquery-min.js"></script>
-<script type="text/javascript" src="script/slick.min.js"></script>
-<script type="text/javascript">
-$('.slick-slider').slick({
-  infinite: true,
-  slidesToShow: 5,
-  slidesToScroll: 2,
-  nextArrow:$('.next'),
-  prevArrow:$('.prev')
-});
-
-// remove fixed-top class header on small screens //
-$(window).bind("resize",function(){
-    console.log($(this).width())
-    if($(this).width() < 992){
-    $('.sticky').removeClass('fixed-top');
-    }
-    else{
-    $('.sticky').addClass('fixed-top');
-    }
-});
-
-
-</script>
+<script type="text/javascript" src="script/LOU_JS.js"></script>
 
 </body>
 </html>

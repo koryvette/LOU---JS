@@ -26,6 +26,7 @@ The following functionality has been added to this site:
    * Node  
    * Express
    * xml2js  
+   * Moment.JS
 * In the Command Prompt, change the directory to the folder where the project is saved.
 * Once the directory is changed, type "node index.js" in the Command Prompt.  
 * Open you web browser.  
@@ -38,11 +39,11 @@ The following functionality has been added to this site:
 * A function was created to capture the current month, based on today's date.  This data is used as part of the actual API.  
 * Once the date/month is captured, the value is added to the API string.  
 * The API is used to obtain events for the current month.  
-    * Although events are request by month, the API will return more events than requested.  This will be limited using another function later in the process  
+    * Although events are requested by month, the API will return events outside that particular month.  This will be limited using another function later in the process.  
 * Once data is obtained from the API, XML is converted to JSON.  
 * Converted JSON data is sent to client, where it is prepared for use in webpage.  
-* Using string interpolation, HTML is scripted and sent to the correct DIV in the index.html page.  
-* HTML is also added for viewing in a table format.  by clicking the button in the top-right corner, you can toggle between tile and table views.  
+* Using string interpolation, HTML is scripted and sent to the correct DIV (tileLaout) in the index.html page.  
+* HTML is also added to another DIV (tableLayout) for viewing in a table format.  By clicking the button on the right-hand side, you can toggle between tile and table views.  
 * Since more data than the current month is returned from the API, Moment.JS is used to remove items outside the current month.  
 * Moment.JS will also display the amount of days/time remaining until the event occurs.  
 

@@ -404,8 +404,8 @@ section:target p{
 .event-view{
   position: fixed;
   display: none;
-  width: 800px;
-  height: 350px;
+  width: 600px;
+  height: 250px;
   padding: 25px;
   border: 1px solid #ff7800;
   top: 50%;
@@ -416,7 +416,7 @@ section:target p{
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   background-color: #ffffff;
-  z-index: 100;
+  z-index: 1000;
   overflow: auto;
 }
 
@@ -552,7 +552,10 @@ section:target p{
   .sticky{
     position: sticky;
     -webkit-position: sticky;
+    opacity: 90%;
     top: 55px;
+    padding-bottom: 3px;
+    z-index: 50;
   }
 
 .categories{
