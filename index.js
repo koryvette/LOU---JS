@@ -2,10 +2,7 @@ const express = require('express');
 const app = express();
 const request = require("request");
 const xml2js = require('xml2js');
-//const util = require("util");
-
 const http = require('http');
-const { response } = require('express');
 
 //Get current month to load into API url
 var today = new Date();
@@ -46,6 +43,7 @@ app.get('/api', function(req, res) {
             parser.parseString(body, function (err, result) {
                 extractedData = result['search']['events'];
                 res.json(extractedData); 
+                
                 console.log(extractedData); 
 
                 });
@@ -53,8 +51,8 @@ app.get('/api', function(req, res) {
     });
 });
 
-
-app.listen(3100, function(){
-    console.log ("listening at 3100");
+var port = process.env.port || 3000
+app.listen(port, function(){
+    console.log ("listening at 3000");
 });
 //cd source\repos\LOU_JS node index.js

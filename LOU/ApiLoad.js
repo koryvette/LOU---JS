@@ -1,16 +1,12 @@
-//Make request to API to request data
-
-
-var startDate = (function(){this.setDate(this.getDate()-1); return this})
-                .call(new Date)
+//Find yesterday's date
+var startDate = moment().format('MM-DD-YYYY');
 console.log(startDate)
 
+//FETCH API data from server
 fetch('/api')
     .then(response => response.json())
     .then(data => generateHtml(data[0]['event']))
     
-
-//---------------    helper functions    ----------------
 //-----------    find DIV to insert HTML   --------------
 const eventTiles = document.getElementById('tileLayout');
 const eventTables = document.getElementById('table_of_events');
@@ -21,9 +17,7 @@ function generateHtml(data){
     //});
 
     const htmlTile = data.map(item => {
-        if(moment(`${item.start_time}`).format('l') >= moment(`${startDate}`).format('l'))
-        console.log(moment(`${item.start_time}`).format('l'))
-        console.log(moment(`${startDate}`).format('l'))
+        if(moment(`${item.start_time}`,"YYYY-MM-DD").toDate() >= moment(startDate).toDate())
         return    ` 
     
      <div class="event-thumb"> 
@@ -34,7 +28,7 @@ function generateHtml(data){
                        <div class="event-thumb-title"> 
                            <h3> `+ moment(`${item.start_time}`).format('l') +`</h3> 
                            <h5>` + moment(`${item.start_time}`).startOf('day').fromNow() + `</h5>
-                           <h5> <a href="${item.venue_url}" target="_blank">${item.title}</a></h5> 
+                           <h5 class="eventTitle"> <a href="${item.venue_url}" target="_blank">${item.title}</a></h5> 
                            <h5> ${item.venue_name} </h5>
                        </div>
                    </div>
@@ -56,6 +50,7 @@ function generateHtml(data){
                     </div>                                           
     `;
     }).join(' ');
+    //console.log(data);
 
     const htmlTable = data.map(item => `
     <TR>
@@ -71,7 +66,9 @@ function generateHtml(data){
     ).join('');
 
     eventTiles.innerHTML = htmlTile;
-    //console.log(htmlTile);
+    console.log(data.length);
+    console.log(htmlTile.data.length);
+
 
     eventTables.innerHTML = htmlTable;
     //console.log(html)

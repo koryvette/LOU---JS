@@ -1,7 +1,7 @@
 # What's Up Louisville? (Code Louisville project)
 
 ## Description  
-This website was created as the front-end project in Code Louisville.  Since that first course, I have continued to develope and improve the information on this site.  For this course, the goal of this project is to utilize Javascript to load events from an API or a CSV file.  
+This website was created as the front-end project in Code Louisville.  Since that first course, I have continued to develope and improve the information on this site.  For this course, the goal of this project is to utilize Javascript to load events from an API or a CSV file.  Also, I will try to limit the results displayed to only show future events.  
   
 ## Files Used
 Here are the pages included in this site:  
@@ -45,19 +45,15 @@ The following functionality has been added to this site:
 * Using string interpolation, HTML is scripted and sent to the correct DIV (tileLaout) in the index.html page.  
 * HTML is also added to another DIV (tableLayout) for viewing in a table format.  By clicking the button on the right-hand side, you can toggle between tile and table views.  
 * Since more data than the current month is returned from the API, Moment.JS is used to remove items outside the current month.  
-* Moment.JS will also display the amount of days/time remaining until the event occurs.  
-
+* Using Moment.JS, each event will also display the amount of days/time remaining until the event occurs.  
 * For comparison, a hardcoded version of this site and data is also available through github/pages using the link below:  
   https://koryvette.github.io/eventcalendar
 
   
 ## Known Issues  
 Here are a few known issues with the site:  
-* Javascript for "Quick View" is broken.  
-* "New Event" form does not post information.  This is a mock-up form to be used later when tied to a database.
-* Images for tiles in TileLayout do not appear.  
+* "New Event" form does not post information.  This is a mock-up form to be used later when tied to a database.  
 * Pagination doesn't pick up the correct # of pages/items.  
-* Columns do not fully extend across table, leaving empty space on some pages.  
-* 
+* Columns do not align correctly across table, leaving empty space on some pages.  However, the data from the API should be displayed.  
 
 

@@ -364,7 +364,7 @@ section:target p{
   width: 100%;
   padding: 10px 0;
   text-align: center;
-  background-color: rgba(255,120,0,0.9);
+  background-color: rgba(235, 181, 66, 0.9);
   position: absolute;
   top: -100%;
   left: 0;
@@ -377,6 +377,9 @@ section:target p{
   -moz-transition: 300ms;
 }
 
+.evenTitle{
+  color: yellow;
+}
 .event-thumb-image:hover .quickview-title{
   top: 45%;
   opacity: 1;
