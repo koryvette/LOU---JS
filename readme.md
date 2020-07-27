@@ -37,7 +37,7 @@ The following functionality has been added to this site:
 The following functionality has been added to this site:
   
 * A function was created to capture the current month, based on today's date.  This data is used as part of the actual API.  
-* Once the date/month is captured, the value is added to the API string.  
+* Once the date/month is captured, the MONTH value is added to the API string.  
 * The API is used to obtain events for the current month.  
     * Although events are requested by month, the API will return events outside that particular month.  This will be limited using another function later in the process.  
 * Once data is obtained from the API, XML is converted to JSON.  
@@ -47,9 +47,9 @@ The following functionality has been added to this site:
 * Since more data than the current month is returned from the API, Moment.JS is used to remove items outside the current month.  
 * Using Moment.JS, each event will also display the amount of days/time remaining until the event occurs.  
 * For comparison, a hardcoded version of this site and data is also available through github/pages using the link below:  
-  https://koryvette.github.io/eventcalendar
+  https://koryvette.github.io/eventcalendar  
 
-  
+
 ## Known Issues  
 Here are a few known issues with the site:  
 * "New Event" form does not post information.  This is a mock-up form to be used later when tied to a database.  

@@ -23,33 +23,38 @@ const currentMonth = month[today.getMonth()];
 
 //User input to capture API Key
 var key = "NNQLDMQTJrwpbHSx";
-//http://api.eventful.com/json/events/search?app_key=NNQLDMQTJrwpbHSx&location=Louisville&date=July&page_size=250&page_number=1&within=25&units=miles
 
 //Use API Key and Current month variables to create API
 const API = `http://api.eventful.com/rest/events/search?app_key=${key}&location=Louisville&date=${currentMonth}&page_size=250&page_number=1&within=25&units=miles`;
 
+//pages loop
+//for(let page = 1;page < 6; page++){
+//    const API = `http://api.eventful.com/rest/events/search?app_key=${key}&location=Louisville&date=${currentMonth}&page_size=250&page_number=`+ [page] +`&within=25&units=miles`;
+//    console.log(API)
+//}
+
 app.use(express.static('LOU'));
 
-app.get('/api', function(req, res) {
+app.get('/api', function(req, res)
+    {
+        request(`${API}`, function(error, response, body){
+            if(error)
+                {
+                console.log("There was an error");
+                }
+            else{
 
-    request(`${API}`, function(error, response, body){
-        if(error)
-            {
-            console.log("There was an error");
-            }
-        else{
+                var parser = new xml2js.Parser();
+                parser.parseString(body, function (err, result) {
+                    extractedData = result['search']['events'];
+                    res.json(extractedData); 
+                    
+                    console.log(extractedData); 
 
-            var parser = new xml2js.Parser();
-            parser.parseString(body, function (err, result) {
-                extractedData = result['search']['events'];
-                res.json(extractedData); 
-                
-                console.log(extractedData); 
-
-                });
-            }
+                    });
+                }
+        });
     });
-});
 
 var port = process.env.port || 3000
 app.listen(port, function(){

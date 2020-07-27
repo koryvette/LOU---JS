@@ -13,9 +13,6 @@ const eventTables = document.getElementById('table_of_events');
 
 //-------   generate HTML code from API response   ------
 function generateHtml(data){
-    //var result = data.filter(function(){return data.start_time >= startDate;
-    //});
-
     const htmlTile = data.map(item => {
         if(moment(`${item.start_time}`,"YYYY-MM-DD").toDate() >= moment(startDate).toDate())
         return    ` 
@@ -65,12 +62,28 @@ function generateHtml(data){
     </TR>`
     ).join('');
 
+    //fill and display event tiles
     eventTiles.innerHTML = htmlTile;
-    console.log(data.length);
-    console.log(htmlTile.data.length);
-
-
+    //fill and display event table
     eventTables.innerHTML = htmlTable;
-    //console.log(html)
 }
 
+function getBackground(data){
+
+     var background = data.map(item => {
+
+         if(item.venue_name == 'Waterfront Park'){
+             return background = 'img/waterfrontpark.jpg';
+    //     } else if
+    //         (`${item.venue_name}` == 'Lynn Family Stadium'){
+    //         return item.venue_name= 'img/FLstate_revised.jpg';
+    //     } else if
+    //         (`${item.venue_name}` == 'Headliner\'s Music Hall'){
+    //         return item.venue_name = 'img/headliners.jpg';
+    //     } else if
+    //         (`${item.venue_name}` == 'Waterfront Park'){
+    //         return item.venue_name = 'img/waterfrontpark.jpg';
+         }else 
+             return background = 'img/bourbon.jpg';
+     });
+}
