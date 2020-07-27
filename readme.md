@@ -20,14 +20,14 @@ Although Javascript was used throughtout this site for various tasks, the files 
 * LOU/ApiLoad.js
 
 ## Instructions  
-The following functionality has been added to this site:
+Here are the instructions on how to view this site:
   
 * This project will require the use of:  
    * Node  
-   * Express
+   * Express  
    * xml2js  
-   * Moment.JS
-* In the Command Prompt, change the directory to the folder where the project is saved.
+   * Moment.JS  
+* In the Command Prompt, change the directory to the folder where the project is saved.  
 * Once the directory is changed, type "node index.js" in the Command Prompt.  
 * Open you web browser.  
 * in the address bar of your web brower, type "localhost:3100".
@@ -44,7 +44,7 @@ The following functionality has been added to this site:
 * Converted JSON data is sent to client, where it is prepared for use in webpage.  
 * Using string interpolation, HTML is scripted and sent to the correct DIV (tileLaout) in the index.html page.  
 * HTML is also added to another DIV (tableLayout) for viewing in a table format.  By clicking the button on the right-hand side, you can toggle between tile and table views.  
-* Since more data than the current month is returned from the API, Moment.JS is used to remove items outside the current month.  
+* Since more data than the current month is returned from the API, Moment.JS is used to remove items outside the current month.  In addition, anything prior to the current date is also removed.  
 * Using Moment.JS, each event will also display the amount of days/time remaining until the event occurs.  
 * For comparison, a hardcoded version of this site and data is also available through github/pages using the link below:  
   https://koryvette.github.io/eventcalendar  
