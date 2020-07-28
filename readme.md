@@ -30,7 +30,7 @@ Here are the instructions on how to view this site:
 * In the Command Prompt, change the directory to the folder where the project is saved.  
 * Once the directory is changed, type "node index.js" in the Command Prompt.  
 * Open you web browser.  
-* in the address bar of your web brower, type "localhost:3100".
+* in the address bar of your web brower, type "localhost:3000".
 * The page should load with data from the API.  It may take a minute or two, due to the amount of data, but be patient.    
 
 ## Funtionality  
