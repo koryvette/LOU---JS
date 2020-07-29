@@ -20,18 +20,14 @@ month[9] = "October";
 month[10] = "November";
 month[11] = "December";
 const currentMonth = month[today.getMonth()];
+const nextMonth = month[today.getMonth()+1];
+console.log(`Display ${currentMonth} events.`);
 
 //User input to capture API Key
 var key = "NNQLDMQTJrwpbHSx";
 
 //Use API Key and Current month variables to create API
 const API = `http://api.eventful.com/rest/events/search?app_key=${key}&location=Louisville&date=${currentMonth}&page_size=250&page_number=1&within=25&units=miles`;
-
-//pages loop
-//for(let page = 1;page < 6; page++){
-//    const API = `http://api.eventful.com/rest/events/search?app_key=${key}&location=Louisville&date=${currentMonth}&page_size=250&page_number=`+ [page] +`&within=25&units=miles`;
-//    console.log(API)
-//}
 
 app.use(express.static('LOU'));
 
@@ -43,14 +39,11 @@ app.get('/api', function(req, res)
                 console.log("There was an error");
                 }
             else{
-
                 var parser = new xml2js.Parser();
                 parser.parseString(body, function (err, result) {
                     extractedData = result['search']['events'];
-                    res.json(extractedData); 
-                    
-                    console.log(extractedData); 
-
+                    res.json(extractedData);                     
+                    console.log(extractedData);
                     });
                 }
         });
@@ -60,4 +53,3 @@ var port = process.env.port || 3000
 app.listen(port, function(){
     console.log ("listening at 3000");
 });
-//cd source\repos\LOU_JS node index.js

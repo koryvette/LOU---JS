@@ -49,7 +49,6 @@ function generateHtml(data){
                     </div>                                           
     `;
     }).join(' ');
-    //console.log(data);
 
     const htmlTable = data.map(item => `
     <TR>
@@ -68,4 +67,5 @@ function generateHtml(data){
     eventTiles.innerHTML = htmlTile;
     //fill and display event table
     eventTables.innerHTML = htmlTable;
+
 }
