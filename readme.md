@@ -27,14 +27,20 @@ Here are the instructions on how to view this site:
    * Express  
    * xml2js  
    * Moment.JS  
+* If you do not have these installed already, you can install these packages by typing the following lines (individually) into the Command Prompt:  
+   * npm install Node  
+   * npm install Express  
+   * npm install xml2js  
+   * npm install moment  
+* Download/save the project files to a folder in you pc. (from https://github.com/koryvette/LOU---JS)  
 * In the Command Prompt, change the directory to the folder where the project is saved.  
 * Once the directory is changed, type "node index.js" in the Command Prompt.  
 * Open you web browser.  
-* in the address bar of your web brower, type "localhost:3000".
-* The page should load with data from the API.  It may take a minute or two, due to the amount of data, but be patient.    
+* in the address bar of your web brower, type "localhost:3000".  
+* The page should load with data from the API.  It may take a minute or two, due to the amount of data, but be patient.  
 
 ## Funtionality  
-The following functionality has been added to this site:
+The following functionality has been added to this site:  
   
 * A function was created to capture the current month, based on today's date.  This data is used as part of the actual API.  
 * Once the date/month is captured, the MONTH value is added to the API string.  
