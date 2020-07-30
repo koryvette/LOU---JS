@@ -43,7 +43,7 @@ app.get('/api', function(req, res)
                 parser.parseString(body, function (err, result) {
                     extractedData = result['search']['events'];
                     res.json(extractedData);                     
-                    console.log(extractedData);
+                    //console.log(extractedData);
                     });
                 }
         });

@@ -1,4 +1,4 @@
-//Find yesterday's date
+//Find today's date
 var startDate = moment().format('MM-DD-YYYY');
 console.log(startDate)
 
@@ -13,8 +13,8 @@ const eventTables = document.getElementById('table_of_events');
 
 //-------   generate HTML code from API response   ------
 function generateHtml(data){
-    //let background = getBackground();
 
+    //generate HTML code to display event tiles
     const htmlTile = data.map(item => {
         if(moment(`${item.start_time}`,"YYYY-MM-DD").toDate() >= moment(startDate).toDate())
         return    ` 
@@ -51,6 +51,10 @@ function generateHtml(data){
     }).join(' ');
     //console.log(data);
 
+    //fill and display event tiles
+    eventTiles.innerHTML = htmlTile;
+
+    //generate HTML code to display event table
     const htmlTable = data.map(item => `
     <TR>
     <TD  class= "text-dark">${item.title}</TD>
@@ -64,8 +68,6 @@ function generateHtml(data){
     </TR>`
     ).join('');
 
-    //fill and display event tiles
-    eventTiles.innerHTML = htmlTile;
     //fill and display event table
     eventTables.innerHTML = htmlTable;
 }
